@@ -18,6 +18,8 @@ task testJavadoc(type: Javadoc) {
     classpath = sourceSets.test.compileClasspath
     // if not changed the destinationDir, the javadoc for production code is overridden.
     destinationDir = file("${buildDir}/docs/testjavadoc")
+
+    options.optionFiles << file('javadoc/test-javadoc.options')
 }
 
 tasks.withType(JavaCompile) {
