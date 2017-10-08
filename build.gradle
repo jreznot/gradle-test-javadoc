@@ -37,3 +37,11 @@ task testJavadoc(type: Javadoc) {
     // if not changed the destinationDir, the javadoc for production code is overridden.
     destinationDir = file("${buildDir}/docs/testjavadoc")
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
